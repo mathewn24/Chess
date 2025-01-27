@@ -104,7 +104,7 @@ bool Board::move(int y1, int x1, int y2, int x2) {
     // The source is an empty cell or if source and destination are the same position.
     if (isEmpty(y1,x1) || y1 == y2 && x1 == x2) {
         return false;
-    }
+    } 
     
     // The destination is out of bound of the board (hint: use OUT_BOUND).
     if (get(y2, x2) == OUT_BOUND) {
