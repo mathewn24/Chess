@@ -30,10 +30,10 @@ void Human::makeMove(Board* board) {
         int y1, x1, y2, x2;
         c1 = toupper(c1);
         c2 = toupper(c2);
-        y1 = c1 - 'A';
-        x1 = r1-1;
-        y2 = c2 - 'A';
-        x2 = r2-1;
+        y1 = r1-1;
+        x1 = c1 - 'A';
+        y2 = r2-1;
+        x2 = c2 - 'A';
         
         bool valid = board->move(y1, x1, y2, x2);
         if (valid)

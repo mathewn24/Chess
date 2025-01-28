@@ -69,11 +69,11 @@ void Piece::capture() {
 
 void Piece::move(int y, int x) {
     Board* board = getBoard();
-
     // capture opponent piece
     // hint: get the piece at (y, x)
     Piece* curr = board->get(y, x);
-    if (curr->getColor() != this->getColor()) {
+
+    if (curr && (curr->getColor() != this->getColor())) {
         // call capture() on the piece if it is of different color from mine
         curr->capture();
     }

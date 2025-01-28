@@ -100,26 +100,32 @@ void Board::print() {
 bool Board::move(int y1, int x1, int y2, int x2) {
     // (y1, x1) is source and (y2, x2) is destination
     // check against following invalid cases:
-    
+
     // The source is an empty cell or if source and destination are the same position.
-    if (isEmpty(y1,x1) || y1 == y2 && x1 == x2) {
+    if (isEmpty(y1,x1) || (y1 == y2 && x1 == x2)) {
+        cout << "Empty value: " << isEmpty(y1,x1) << endl; 
+        cout << "The source is an empty cell or if source and destination are the same position." <<endl;
         return false;
     } 
     
-    // The destination is out of bound of the board (hint: use OUT_BOUND).
+    // The destination is out of bound of the board.
     if (get(y2, x2) == OUT_BOUND) {
+        cout << "The destination is out of bound of the board." <<endl;
         return false;
     }
 
     // The source piece is not of same color of current turn of the game.
     Piece* p = get(y1, x1);
     if (p->getColor() != game->getTurn()) {
+        cout << "The source piece is not of same color of current turn of the game." <<endl;
         return false;
     }
     
     // Piece-specific validation
-    if (p->isMoveValid(y2, x2) == false)
+    if (p->isMoveValid(y2, x2) == false){
+        cout << "Piece specific validation err." <<endl;
         return false;
+    }
     
     p->move(y2, x2);
     return true;
