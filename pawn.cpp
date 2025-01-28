@@ -22,7 +22,7 @@ bool Pawn::isMoveValid(int y, int x) {
     
     if (dy == delta) {  // one cell forward
         if (abs(dx) == 1 && p != EMPTY &&
-            p->getColor() != this->getColor())  // killing diagonally
+            p->getColor() != this->getColor())  // capture diagonally
             return true;
         if (dx == 0 && p == EMPTY)  // no piece ahead
             return true;

@@ -21,26 +21,24 @@ void Machine::makeMove(Board* board) {
         int x1 = p->getX();
         
         // write a loop to repeat below at most TRIALS times:
-        int attempts = 0;
         int y2, x2;
         bool valid = false;
 
-        while((attempts < TRIALS) and (!valid)) {
+        for (int i = 0; i < TRIALS; i++) {
             // - generate random integers y2 and x2 in range of [0, H) and [0, W) respectively
-            y2 = rand() % 8;
-            x2 = rand() % 8;
+            y2 = rand() % H;
+            x2 = rand() % W;
             // - call board's move(y1, x1, y2, x2)
+            cout << "From : (" << y1 << ", " << x1 << ") " << "To: (" << y2 << ", " << x2 << ") " << endl;
             valid = board->move(y1, x1, y2, x2);
-            // - once a valid move is returned, print the from and to cell addresses 
+            // - once a valid move is returned, print the from and to cell addresses
+            //   and exit this function
             if (valid) {
                 std::cout << "Random coordinates picked: ";
-                std::cout << char(y2 + 'A') << x2+1 << std::endl;
+                std::cout << char(x2 + 'A') << y2+1 << std::endl;
+                break;
             }
-            attempts += 1;
+            cout << "Invalid input!" << endl;
         }
-        
-        //   and exit this function
-        if (valid)
-            break;
     }
 }

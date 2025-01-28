@@ -2,6 +2,8 @@
 #include "board.h"
 #include "bishop.h"
 
+using namespace std;
+
 Bishop::Bishop(Color color, int y, int x, Board* board) : Piece(color, y, x, board) {
     setLabel(letter(BISHOP));
     setScore(BISHOP_POINTS);

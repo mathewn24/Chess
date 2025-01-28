@@ -2,6 +2,8 @@
 #include "board.h"
 #include "queen.h"
 
+using namespace std;
+
 Queen::Queen(Color color, int y, int x, Board* board) : Piece(color, y, x, board) {
     setLabel(letter(QUEEN));
     setScore(QUEEN_POINTS);

@@ -104,7 +104,7 @@ bool Board::move(int y1, int x1, int y2, int x2) {
     // The source is an empty cell or if source and destination are the same position.
     if (isEmpty(y1,x1) || (y1 == y2 && x1 == x2)) {
         cout << "Empty value: " << isEmpty(y1,x1) << endl; 
-        cout << "The source is an empty cell or if source and destination are the same position." <<endl;
+        cout << "The source is an empty cell or source and destination are the same position." <<endl;
         return false;
     } 
     
