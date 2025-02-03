@@ -24,19 +24,19 @@ void Machine::makeMove(Board* board) {
         int y2, x2;
         bool valid = false;
 
-        for (int i = 0; i < TRIALS; i++) {
+        for (int k = 0; k < TRIALS; k++) {
             // - generate random integers y2 and x2 in range of [0, H) and [0, W) respectively
             y2 = rand() % H;
             x2 = rand() % W;
             // - call board's move(y1, x1, y2, x2)
-            cout << "From : (" << y1 << ", " << x1 << ") " << "To: (" << y2 << ", " << x2 << ") " << endl;
+            cout << "From : (" << char(x1 + 'A') << ", " << y1+1 << ") " << "To: (" << char(x2 + 'A') << ", " << y2+1 << ") " << endl;
             valid = board->move(y1, x1, y2, x2);
             // - once a valid move is returned, print the from and to cell addresses
             //   and exit this function
             if (valid) {
                 std::cout << "Random coordinates picked: ";
                 std::cout << char(x2 + 'A') << y2+1 << std::endl;
-                break;
+                return;
             }
             cout << "Invalid input!" << endl;
         }
