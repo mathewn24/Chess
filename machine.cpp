@@ -29,14 +29,15 @@ void Machine::makeMove(Board* board) {
             y2 = rand() % H;
             x2 = rand() % W;
             // - call board's move(y1, x1, y2, x2)
-            cout << "From : " << char(x1 + 'A') << y1+1 << " To: " << char(x2 + 'A') << y2+1 << endl;
+            
             valid = board->move(y1, x1, y2, x2);
             // - once a valid move is returned, print the from and to cell addresses
             //   and exit this function
             if (valid) {
+                cout << this->getName() <<  "'s turn: " << char(x1 + 'A') << y1+1 << " " << char(x2 + 'A') << y2+1 << endl;
                 return;
             }
-            cout << "Invalid input!" << endl;
+            //cout << "Invalid input!" << endl;
         }
     }
 }
