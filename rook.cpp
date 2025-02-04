@@ -1,9 +1,6 @@
 #include "game.h"
 #include "board.h"
 #include "rook.h"
-#include "iostream"
-
-using namespace std;
 
 Rook::Rook(Color color, int y, int x, Board* board) : Piece(color, y, x, board) {
     setLabel(letter(ROOK));
@@ -32,7 +29,7 @@ bool Rook::isMoveValid(int y, int x) {
 
     // Calculate the number of steps needed depending on the direction.
     int steps = (dx != 0) ? absx : absy;
-    
+
     // Check if the path is clear for the k values between the two points.
     for (int k = 1; k < steps; k++) {
         int checkX = x1 + k*dx;

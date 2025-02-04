@@ -1,9 +1,6 @@
 #include "game.h"
 #include "board.h"
 #include "bishop.h"
-#include "iostream"
-
-using namespace std;
 
 Bishop::Bishop(Color color, int y, int x, Board* board) : Piece(color, y, x, board) {
     setLabel(letter(BISHOP));
@@ -12,10 +9,10 @@ Bishop::Bishop(Color color, int y, int x, Board* board) : Piece(color, y, x, boa
 
 bool Bishop::isMoveValid(int y, int x) {
     Board* board = getBoard();
-    int y1 = getY(); // Get y of source destination
-    int x1 = getX(); // Get x of source destination.
-    int absx = abs(y-y1);
-    int absy = abs(x-x1);
+    int y1 = getY(); // Get y of source.
+    int x1 = getX(); // Get x of source.
+    int absy = abs(y-y1);
+    int absx = abs(x-x1);
 
     // Check if the move is diagonal.
     if (absx != absy) {
