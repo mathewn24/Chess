@@ -34,12 +34,7 @@ void Player::addPiece(Piece* p) {
 void Player::delPiece(Piece* p) {
     // Remove p from the pieces vector
     auto it = std::find(pieces.begin(), pieces.end(), p); 
-    
     if(it != pieces.end()) {
         pieces.erase(it);
-    } else {
-        std::cout << "Piece not found in the player's pieces." << std::endl;
     }
-    int idx = std::distance(pieces.begin(), it);
-    pieces.erase(pieces.begin()+idx);
 }
