@@ -1,5 +1,5 @@
 Mac/Linux:
-g++ main.cpp game.cpp board.cpp piece.cpp player.cpp human.cpp machine.cpp king.cpp queen.cpp bishop.cpp knight.cpp rook.cpp pawn.cpp -o runGame && ./runGame.exe
+g++ main.cpp game.cpp board.cpp piece.cpp player.cpp human.cpp machine.cpp king.cpp queen.cpp bishop.cpp knight.cpp rook.cpp pawn.cpp -o runGame && ./runGame
 
 Windows:
 g++ main.cpp game.cpp board.cpp piece.cpp player.cpp human.cpp machine.cpp king.cpp queen.cpp bishop.cpp knight.cpp rook.cpp pawn.cpp -o runGame && runGame
